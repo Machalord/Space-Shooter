@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/EnemyShip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/EnemyPathFormation.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 76.2224, 74.7342, 0, 0, 0, 0, 85.1313, 97.8976, 0, 0, 0, 0, 117.204, 153.133, 0, 0, 0, 0, 154.621, 213.714, 0, 0, 0, 0, 209.857, 302.804, 0, 0, 0, 0, 288.256, 365.167, 0, 0, 0, 0, 486.036, 422.185, 0, 0, 0, 0, 676.688, 434.657, 0, 0, 0, 0, 840.613, 434.657, 0, 0, 0, 0, 1141.74, 416.839, 0, 0, 0, 0, 1387.63, 283.205, 0, 0, 0, 0, 1512.35, 138.879, 0, 0, 0, 0, 1519.48, -76.7186, 0, 0, 0, 0, 1357.33, -114.136, 0, 0, 0, 0, 1006.32, -126.609, 0, 0, 0, 0, 673.124, -126.609, 0, 0, 0, 0, 429.018, -83.8457, 0, 0, 0, 0, 352.401, -16.1375, 0, 0, 0, 0, 320.329, 65.8252, 0, 0, 0, 0, 313.201, 185.206, 0, 0, 0, 0, 318.547, 258.259, 0, 0, 0, 0, 327.456, 343.786, 0, 0, 0, 0, 357.746, 416.839, 0, 0, 0, 0, 436.145, 461.384, 0, 0, 0, 0, 690.942, 518.402, 0, 0, 0, 0, 1017.01, 543.347, 0, 0, 0, 0, 1360.9, 509.493, 0, 0, 0, 0, 1492.75, 407.93, 0, 0, 0, 0, 1503.44, 235.096, 0, 0, 0, 0, 1403.66, 142.443, 0, 0, 0, 0, 1205.88, 19.4985, 0, 0, 0, 0, 886.94, -7.22845, 0, 0, 0, 0, 633.925, 83.6432, 0, 0, 0, 0, 582.253, 242.223, 0, 0, 0, 0, 580.471, 359.822, 0, 0, 0, 0, 591.162, 427.53, 0, 0, 0, 0, 623.234, 497.02, 0, 0, 0, 0, 760.433, 554.038, 0, 0, 0, 0, 1054.43, 577.201, 0, 0, 0, 0, 1198.75, 480.984, 0, 0, 0, 0, 1172.03, 222.623, 0, 0, 0, 0, 999.193, 58.6981, 0, 0, 0, 0, 756.869, -57.1188, 0, 0, 0, 0, 475.345, -103.446, 0, 0, 0, 0, 250.839, -119.482, 0, 0, 0, 0, 135.022, -21.4828, 0, 0, 0, 0, 88.6949, 72.9524, 0, 0, 0, 0, 76.2224, 74.7342 )
+}
+
+[node name="Path2D" type="Path2D"]
+position = Vector2( 72.663, 114.054 )
+scale = Vector2( 0.701235, 0.746835 )
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 123.153, 162.766 )
+rotation = 1.0175
+offset = 100.0
+
+[node name="EnemyShip" parent="PathFollow2D" instance=ExtResource( 1 )]
+rotation = -1.5708
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="."]
+position = Vector2( 175.78, 247.84 )
+rotation = 1.0158
+offset = 200.0
+
+[node name="EnemyShip" parent="PathFollow2D2" instance=ExtResource( 1 )]
+rotation = -1.5708
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="."]
+position = Vector2( 237.536, 324.822 )
+rotation = 0.671961
+offset = 300.0
+
+[node name="EnemyShip" parent="PathFollow2D3" instance=ExtResource( 1 )]
+rotation = -1.5708
+
+[node name="PathFollow2D4" type="PathFollow2D" parent="."]
+position = Vector2( 322.02, 374.901 )
+rotation = 0.28067
+offset = 400.0
+
+[node name="EnemyShip" parent="PathFollow2D4" instance=ExtResource( 1 )]
+rotation = -1.5708
