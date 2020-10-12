@@ -6,7 +6,7 @@ extends KinematicBody2D
 # var b = "text"
 export (int) var speed=500
 var velocity=Vector2()
-
+var bullet_scene=preload("res://Scenes/Bullet.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -37,7 +37,11 @@ func _physics_process(delta):
 	
 #	pass
 func Shoot():
-	
+	if $ShootColdown.is_stopped():
+		var bullet = bullet_scene.instance()
+		bullet.start($ShotPos1.global_position)
+		get_tree().get_root().add_child(bullet)
+		$ShootColdown.start()
 	pass
 
 
