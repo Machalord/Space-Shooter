@@ -20,3 +20,9 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	queue_free()
 	pass # Replace with function body.
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("player"):
+		queue_free()
+	pass # Replace with function body.
