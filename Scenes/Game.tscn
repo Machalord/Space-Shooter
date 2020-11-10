@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ShipPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Backgrounds/purple.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/PowerUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Meteor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=6]
 
@@ -23,6 +22,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1280, 720 )
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 0, 1 )
 
 [node name="left_wall" type="StaticBody2D" parent="Node2D"]
 position = Vector2( 0, 360 )
@@ -56,12 +56,8 @@ collision_mask = 768
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/up_wall"]
 shape = SubResource( 2 )
 
-[node name="PowerUp" parent="." instance=ExtResource( 4 )]
-position = Vector2( 564.445, 118.433 )
-scale = Vector2( 2, 2 )
-
 [node name="ShipPlayer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 640, 500 )
+position = Vector2( 640, 600 )
 collision_layer = 768
 
 [node name="Spawner" parent="." instance=ExtResource( 6 )]
