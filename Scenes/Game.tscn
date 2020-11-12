@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ShipPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Backgrounds/purple.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/UI/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Meteor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=6]
 
@@ -64,3 +65,7 @@ collision_layer = 768
 position = Vector2( 637.797, -129.254 )
 scene_to_instance = ExtResource( 5 )
 Timer_Time = 0.5
+
+[node name="Hud" parent="." instance=ExtResource( 4 )]
+margin_right = 1280.0
+margin_bottom = 720.0

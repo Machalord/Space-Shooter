@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Space Shooter"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scenes/Global.tscn"
+
 [display]
 
 window/size/width=1280
