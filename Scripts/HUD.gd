@@ -5,5 +5,5 @@ func _ready():
 	pass
 	
 func UpdateHud():
-	$HBoxContainer/LifeLabel.text="x "+str(Global.lifes)
+	$HBoxContainer/LifeLabel.text=str(Global.lifes)
 	pass	
