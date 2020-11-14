@@ -34,6 +34,10 @@ func _process(delta):
 	
 func _physics_process(delta):
 	velocity = move_and_slide(velocity)		
+	var pos = Vector2()    
+	pos.x = clamp(position.x, $Sprite.get_rect().size.x/2, get_viewport_rect().size.x-$Sprite.get_rect().size.x/2)
+	pos.y = clamp(position.y, $Sprite.get_rect().size.y/2, get_viewport_rect().size.y-$Sprite.get_rect().size.y/2)
+	global_position = pos
 	
 #	pass
 func Shoot():
