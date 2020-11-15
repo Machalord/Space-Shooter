@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+scroll_offset = Vector2( -491, -338 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraphNode" type="GraphNode" parent="GraphEdit"]
+margin_left = 82.9684
+margin_top = 117.057
+margin_right = 278.968
+margin_bottom = 288.057
+mouse_filter = 1
+
+[node name="GraphNode2" type="GraphNode" parent="GraphEdit"]
+margin_left = 491.0
+margin_top = 338.0
+margin_right = 687.0
+margin_bottom = 509.0
+mouse_filter = 1
