@@ -7,6 +7,7 @@ extends KinematicBody2D
 export (int) var speed=500
 var velocity=Vector2()
 var bullet_scene=preload("res://Scenes/Bullet.tscn")
+var target
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,11 +15,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	target=get_global_mouse_position()
+	if !Input.is_action_pressed("lock"):
+		look_at(target)
 	velocity=Vector2()
 	
 	if Input.is_action_pressed("shoot"):
-		Shoot()
+		if Input.is_action_pressed("lock"):
+			Shoot_Locked()	
+		else:	
+			Shoot()
 		
 	if Input.is_action_pressed("left"):
 		velocity.x -= 1
@@ -31,6 +37,7 @@ func _process(delta):
 		
 		
 	velocity = velocity.normalized()*speed
+	#velocity=position.direction_to(target.position)*speed
 	
 func _physics_process(delta):
 	velocity = move_and_slide(velocity)		
@@ -43,11 +50,19 @@ func _physics_process(delta):
 func Shoot():
 	if $ShootColdown.is_stopped():
 		var bullet = bullet_scene.instance()
-		bullet.start($ShotPos1.global_position)
+		bullet.start3($ShotPos1.global_position,target)
 		bullet.z_index=z_index-1
 		get_tree().get_root().add_child(bullet)
 		$ShootColdown.start()
 	pass
+func Shoot_Locked():
+	if $ShootColdown.is_stopped():
+		var bullet = bullet_scene.instance()
+		bullet.start3($ShotPos1.global_position,global_position-$ShotPos1.global_position)
+		bullet.z_index=z_index-1
+		get_tree().get_root().add_child(bullet)
+		$ShootColdown.start()
+	pass	
 
 
 func _on_Area2D_area_entered(area):

@@ -24,6 +24,12 @@ func start2(pos,target):
 	velocity = Vector2(speed,0).rotated(rotation)
 	acceleration=Vector2(acceleration_speed,0).rotated(rotation)
 	$Sprite.rotation_degrees=90
+func start3(pos,target):
+	position = pos
+	look_at(target)
+	velocity = Vector2(speed,0).rotated(rotation)
+	acceleration=Vector2(acceleration_speed,0).rotated(rotation)
+	$Sprite.rotation_degrees=90	
 
 func _physics_process(delta):
 	velocity+=acceleration*delta

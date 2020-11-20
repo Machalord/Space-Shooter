@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ShipPlayer.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Meteor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/EnemyShip.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/EnemyShip2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 360 )
@@ -69,7 +70,35 @@ position = Vector2( 637.797, -129.254 )
 scene_to_instance = ExtResource( 5 )
 Timer_Time = 0.5
 
+[node name="EnemyShip2" parent="Game" instance=ExtResource( 8 )]
+position = Vector2( 408.973, -135.68 )
+
+[node name="EnemyShip3" parent="Game" instance=ExtResource( 8 )]
+position = Vector2( 672.481, -211.875 )
+
 [node name="EnemyShip" parent="Game" instance=ExtResource( 7 )]
 position = Vector2( 1174.1, 51.6332 )
+
+[node name="Points" type="Node2D" parent="Game"]
+
+[node name="Positon" type="Position2D" parent="Game/Points" groups=[
+"Points",
+]]
+position = Vector2( 200, 200 )
+
+[node name="Positon2" type="Position2D" parent="Game/Points" groups=[
+"Points",
+]]
+position = Vector2( 1080, 200 )
+
+[node name="Positon3" type="Position2D" parent="Game/Points" groups=[
+"Points",
+]]
+position = Vector2( 1080, 520 )
+
+[node name="Positon4" type="Position2D" parent="Game/Points" groups=[
+"Points",
+]]
+position = Vector2( 200, 520 )
 
 [node name="Hud" parent="." instance=ExtResource( 4 )]
