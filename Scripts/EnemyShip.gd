@@ -14,6 +14,7 @@ var speed=200
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	target=get_tree().get_nodes_in_group("Player")[0]
+	look_at(target.position) 
 	pass # Replace with function body.
 func Shoot():
 	if $ShootColdown.is_stopped():
@@ -26,9 +27,10 @@ func Shoot():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity=position.direction_to(target.position)*speed
-	look_at(target.position) 
-	if position.distance_to(target.position) > 5:
+	look_at(target.position)
+	
+	if position.distance_to(target.position) > 300:
 		velocity = move_and_slide(velocity)
-	if position.distance_to(target.position) > 500:	
+	if position.distance_to(target.position)  < 300:	
 		Shoot()
 	pass

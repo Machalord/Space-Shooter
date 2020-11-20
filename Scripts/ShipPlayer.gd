@@ -44,6 +44,7 @@ func Shoot():
 	if $ShootColdown.is_stopped():
 		var bullet = bullet_scene.instance()
 		bullet.start($ShotPos1.global_position)
+		bullet.z_index=z_index-1
 		get_tree().get_root().add_child(bullet)
 		$ShootColdown.start()
 	pass
